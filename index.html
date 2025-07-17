@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vin Nesia Exchange: Convert currencies instantly with real-time exchange rates for global currencies. Powered by Frankfurter API.">
-    <meta name="keywords" content="currency converter, exchange rates, real-time currency conversion, forex rates, USD to EUR, Vin Nesia Exchange">
+    <meta name="description" content="Learn about Vin Nesia Exchange, a trusted platform for real-time currency conversion using the Frankfurter API.">
+    <meta name="keywords" content="about vin nesia exchange, currency converter, exchange rates, forex, real-time conversion">
     <meta name="author" content="Vin Nesia Exchange">
     <meta name="robots" content="index, follow">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <title>Currency Converter - Vin Nesia Exchange</title>
+    <title>About - Vin Nesia Exchange</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <link rel="stylesheet" href="styles.css">
     <script type="application/ld+json">
@@ -44,32 +44,11 @@
     </header>
 
     <main class="container mx-auto py-10">
-        <section class="ticker bg-blue-100 p-4 rounded-lg mb-6 text-center">
-            <h2 class="text-lg font-medium">Live Exchange Rates</h2>
-            <div id="ticker" class="text-sm text-gray-700"></div>
-        </section>
-        <section class="converter bg-white p-8 rounded-lg shadow-lg max-w-2xl mx-auto">
-            <h1 class="text-3xl font-semibold text-center mb-6">Currency Converter</h1>
-            <div class="converter-form flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <input type="number" id="amount" placeholder="Enter amount" min="0" class="p-2 border rounded-md w-full sm:w-1/3 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                <select id="fromCurrency" class="p-2 border rounded-md w-full sm:w-1/4 focus:outline-none focus:ring-2 focus:ring-blue-500"></select>
-                <span class="text-gray-600">to</span>
-                <select id="toCurrency" class="p-2 border rounded-md w-full sm:w-1/4 focus:outline-none focus:ring-2 focus:ring-blue-500"></select>
-                <button onclick="swapCurrencies()" class="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition">Swap</button>
-            </div>
-            <div id="result" class="mt-6 text-center text-xl font-medium text-gray-800"></div>
-            <div class="mt-6">
-                <h2 class="text-lg font-medium">Multi-Currency Conversion</h2>
-                <div id="multiResult" class="text-sm text-gray-700"></div>
-            </div>
-            <div class="mt-6">
-                <h2 class="text-lg font-medium">Historical Trend (Last 7 Days)</h2>
-                <canvas id="rateChart" class="mt-4"></canvas>
-            </div>
-            <div class="mt-6">
-                <h2 class="text-lg font-medium">Conversion History</h2>
-                <ul id="history" class="text-sm text-gray-700"></ul>
-            </div>
+        <section class="about bg-white p-8 rounded-lg shadow-lg max-w-3xl mx-auto">
+            <h1 class="text-3xl font-semibold text-center mb-6">About Us</h1>
+            <p class="mb-4">Welcome to Vin Nesia Exchange, your trusted platform for seamless and accurate currency conversion. Powered by the Frankfurter API, we provide real-time exchange rates for all major global currencies.</p>
+            <p class="mb-4">Our mission is to simplify currency conversion for travelers, businesses, and finance enthusiasts worldwide. Whether you're planning a trip or managing international transactions, Vin Nesia Exchange is here to help.</p>
+            <p>Contact us at <a href="mailto:Vin.nesia.id@gmail.com" class="text-blue-900 underline">Vin.nesia.id@gmail.com</a> for any inquiries.</p>
         </section>
     </main>
 
@@ -79,8 +58,5 @@
             <p>© 2025 Vin Nesia Exchange. All rights reserved.</p>
         </div>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
-    <script src="script.js"></script>
 </body>
 </html>
