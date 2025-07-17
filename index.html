@@ -3,28 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Global Exchange: Convert currencies instantly with real-time exchange rates for all major global currencies. Powered by Frankfurter API.">
-    <meta name="keywords" content="currency converter, exchange rates, real-time currency conversion, global currency, USD to EUR, forex rates">
-    <meta name="author" content="Global Exchange">
+    <meta name="description" content="Vin Nesia Exchange: Convert currencies instantly with real-time exchange rates for global currencies. Powered by Frankfurter API.">
+    <meta name="keywords" content="currency converter, exchange rates, real-time currency conversion, forex rates, USD to EUR, Vin Nesia Exchange">
+    <meta name="author" content="Vin Nesia Exchange">
     <meta name="robots" content="index, follow">
-    <title>Currency Converter - Global Exchange</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Currency Converter - Vin Nesia Exchange</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <link rel="stylesheet" href="styles.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FinancialService",
+        "name": "Vin Nesia Exchange",
+        "url": "https://currency.vinnesia.my.id",
+        "description": "A real-time currency converter for global currencies, powered by Frankfurter API.",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "Vin.nesia.id@gmail.com",
+            "contactType": "Customer Service"
+        }
+    }
+    </script>
 </head>
 <body class="bg-gray-100">
     <header class="bg-blue-900 text-white py-4 shadow-md">
         <nav class="container mx-auto flex justify-between items-center">
-            <div class="text-2xl font-bold">Global Exchange</div>
+            <div class="flex items-center">
+                <img src="logo.png" alt="Vin Nesia Exchange Logo" class="h-10 mr-2">
+                <div class="text-2xl font-bold">Vin Nesia Exchange</div>
+            </div>
             <ul class="flex space-x-6">
                 <li><a href="index.html" class="hover:underline">Home</a></li>
                 <li><a href="about.html" class="hover:underline">About</a></li>
-                <li><a href="terms.html" class="hover:underline">Terms of Service</a></li>
-                <li><a href="privacy.html" class="hover:underline">Privacy Policy</a></li>
+                <li><a href="terms.html" class="hover:underline">Terms</a></li>
+                <li><a href="privacy.html" class="hover:underline">Privacy</a></li>
+                <li><a href="blog.html" class="hover:underline">Blog</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="container mx-auto py-10">
+        <section class="ticker bg-blue-100 p-4 rounded-lg mb-6 text-center">
+            <h2 class="text-lg font-medium">Live Exchange Rates</h2>
+            <div id="ticker" class="text-sm text-gray-700"></div>
+        </section>
         <section class="converter bg-white p-8 rounded-lg shadow-lg max-w-2xl mx-auto">
             <h1 class="text-3xl font-semibold text-center mb-6">Currency Converter</h1>
             <div class="converter-form flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -32,19 +55,32 @@
                 <select id="fromCurrency" class="p-2 border rounded-md w-full sm:w-1/4 focus:outline-none focus:ring-2 focus:ring-blue-500"></select>
                 <span class="text-gray-600">to</span>
                 <select id="toCurrency" class="p-2 border rounded-md w-full sm:w-1/4 focus:outline-none focus:ring-2 focus:ring-blue-500"></select>
-                <button onclick="convertCurrency()" class="bg-blue-900 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition">Convert</button>
+                <button onclick="swapCurrencies()" class="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition">Swap</button>
             </div>
             <div id="result" class="mt-6 text-center text-xl font-medium text-gray-800"></div>
+            <div class="mt-6">
+                <h2 class="text-lg font-medium">Multi-Currency Conversion</h2>
+                <div id="multiResult" class="text-sm text-gray-700"></div>
+            </div>
+            <div class="mt-6">
+                <h2 class="text-lg font-medium">Historical Trend (Last 7 Days)</h2>
+                <canvas id="rateChart" class="mt-4"></canvas>
+            </div>
+            <div class="mt-6">
+                <h2 class="text-lg font-medium">Conversion History</h2>
+                <ul id="history" class="text-sm text-gray-700"></ul>
+            </div>
         </section>
     </main>
 
     <footer class="bg-gray-800 text-white py-6">
         <div class="container mx-auto text-center">
             <p>Contact us: <a href="mailto:Vin.nesia.id@gmail.com" class="underline">Vin.nesia.id@gmail.com</a></p>
-            <p>&copy; 2025 Global Exchange. All rights reserved.</p>
+            <p>© 2025 Vin Nesia Exchange. All rights reserved.</p>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
