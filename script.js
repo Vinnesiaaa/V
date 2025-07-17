@@ -10,10 +10,9 @@ async function loadCurrencies() {
     const fromSelect = document.getElementById('fromCurrency');
     const toSelect = document.getElementById('toCurrency');
 
-    // Check cache
     if (localStorage.getItem('currencies') && localStorage.getItem('currenciesLastFetched')) {
         const lastFetched = new Date(localStorage.getItem('currenciesLastFetched'));
-        if (new Date() - lastFetched < 24 * 60 * 60 * 1000) { // Cache valid for 24 hours
+        if (new Date() - lastFetched < 24 * 60 * 60 * 1000) {
             cache.currencies = JSON.parse(localStorage.getItem('currencies'));
             populateCurrencies(fromSelect, toSelect);
             return;
@@ -37,11 +36,9 @@ function populateCurrencies(fromSelect, toSelect) {
         const option1 = document.createElement('option');
         const option2 = document.createElement('option');
         option1.value = currency;
-        option1.text = currency;
-        option1.setAttribute('data-tooltip', `${currency} - ${cache.currencies[currency]}`);
+        option1.text = `${currency} - ${cache.currencies[currency]}`;
         option2.value = currency;
-        option2.text = currency;
-        option2.setAttribute('data-tooltip', `${currency} - ${cache.currencies[currency]}`);
+        option2.text = `${currency} - ${cache.currencies[currency]}`;
         fromSelect.appendChild(option1);
         toSelect.appendChild(option2);
     }
@@ -54,7 +51,7 @@ function populateCurrencies(fromSelect, toSelect) {
 function addTooltips() {
     const options = document.querySelectorAll('#fromCurrency option, #toCurrency option');
     options.forEach(option => {
-        const tooltipText = option.getAttribute('data-tooltip');
+        const tooltipText = option.getAttribute('data-tooltip') || `${option.value} - ${cache.currencies[option.value]}`;
         option.classList.add('tooltip');
         const tooltipSpan = document.createElement('span');
         tooltipSpan.className = 'tooltiptext';
@@ -84,7 +81,7 @@ async function convertCurrency() {
     }
 
     const cacheKey = `${fromCurrency}_${toCurrency}_${amount}`;
-    if (cache.rates[cacheKey] && new Date() - cache.rates[cacheKey].timestamp < 60 * 60 * 1000) { // Cache valid for 1 hour
+    if (cache.rates[cacheKey] && new Date() - cache.rates[cacheKey].timestamp < 60 * 60 * 1000) {
         const convertedAmount = cache.rates[cacheKey].value;
         resultDiv.innerHTML = `${amount} ${fromCurrency} = ${convertedAmount.toFixed(2)} ${toCurrency}`;
         saveHistory(amount, fromCurrency, toCurrency, convertedAmount);
@@ -111,7 +108,7 @@ async function convertCurrency() {
 // Multi-currency conversion
 async function updateMultiCurrency(amount, fromCurrency) {
     const multiResultDiv = document.getElementById('multiResult');
-    const targetCurrencies = ['USD', 'EUR', 'GBP', 'JPY', 'AUD']; // Top 5 currencies
+    const targetCurrencies = ['USD', 'EUR', 'GBP', 'JPY', 'AUD'];
     let results = [];
 
     for (const toCurrency of targetCurrencies) {
@@ -141,7 +138,7 @@ async function updateMultiCurrency(amount, fromCurrency) {
 function saveHistory(amount, fromCurrency, toCurrency, convertedAmount) {
     const history = JSON.parse(localStorage.getItem('conversionHistory')) || [];
     history.unshift({ amount, fromCurrency, toCurrency, convertedAmount: convertedAmount.toFixed(2), date: new Date().toLocaleString() });
-    if (history.length > 10) history.pop(); // Limit to 10 entries
+    if (history.length > 10) history.pop();
     localStorage.setItem('conversionHistory', JSON.stringify(history));
     updateHistory();
 }
@@ -170,7 +167,7 @@ async function updateTicker() {
     }
 
     tickerDiv.innerHTML = tickerText.join(' | ');
-    setTimeout(updateTicker, 60000); // Update every minute
+    setTimeout(updateTicker, 60000);
 }
 
 // Historical chart with Chart.js
@@ -210,9 +207,13 @@ async function updateChart(fromCurrency, toCurrency) {
         },
         options: {
             responsive: true,
+            maintainAspectRatio: false,
             scales: {
-                x: { display: true, title: { display: true, text: 'Date' } },
-                y: { display: true, title: { display: true, text: 'Rate' } }
+                x: { display: true, title: { display: true, text: 'Date' }, ticks: { font: { size: 10 } } },
+                y: { display: true, title: { display: true, text: 'Rate' }, ticks: { font: { size: 10 } } }
+            },
+            plugins: {
+                legend: { labels: { font: { size: 10 } } }
             }
         }
     });
@@ -240,4 +241,9 @@ document.addEventListener('DOMContentLoaded', () => {
     amountInput.addEventListener('input', convertCurrency);
     fromSelect.addEventListener('change', convertCurrency);
     toSelect.addEventListener('change', convertCurrency);
+
+    // Adjust chart height for mobile
+    if (window.innerWidth <= 640) {
+        document.getElementById('rateChart').style.height = '200px';
+    }
 });
