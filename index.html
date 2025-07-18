@@ -3,22 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to Vin Nesia - Your hub for financial tools and services, including the Vin Nesia Exchange currency converter.">
-    <meta name="keywords" content="vin nesia, financial tools, currency converter, exchange rates">
+    <meta name="description" content="Vin Nesia Exchange: Convert currencies instantly with real-time exchange rates.">
+    <meta name="keywords" content="currency converter, exchange rates, vin nesia exchange">
     <meta name="author" content="Vin Nesia">
     <meta name="robots" content="index, follow">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <title>Vin Nesia - Financial Solutions</title>
+    <title>Currency Converter - Vin Nesia Exchange</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <link rel="stylesheet" href="styles.css">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Vin Nesia",
-        "url": "https://www.vinnesia.my.id/",
-        "description": "Vin Nesia provides financial tools and services, including a real-time currency converter.",
-        "sameAs": ["https://currency.vinnesia.my.id/"],
+        "@type": "FinancialService",
+        "name": "Vin Nesia Exchange",
+        "url": "https://currency.vinnesia.my.id/",
+        "description": "A real-time currency converter.",
         "contactPoint": { "@type": "ContactPoint", "email": "Vin.nesia.id@gmail.com", "contactType": "Customer Service" }
     }
     </script>
@@ -35,8 +34,8 @@
     <header class="bg-blue-900 text-white py-3 shadow-md">
         <nav class="container mx-auto flex flex-col items-center px-2">
             <div class="flex items-center mb-2">
-                <img src="images/logo.png" alt="Vin Nesia Logo" class="h-8 mr-2">
-                <div class="text-lg font-bold">Vin Nesia</div>
+                <img src="images/logo.png" alt="Vin Nesia Exchange Logo" class="h-8 mr-2">
+                <div class="text-lg font-bold">Vin Nesia Exchange</div>
             </div>
             <button id="menuToggle" class="bg-gray-700 text-white px-4 py-2 rounded-md mb-2 md:hidden">Menu</button>
             <ul id="navMenu" class="flex-col hidden md:flex md:flex-row space-y-2 md:space-y-0 md:space-x-4 text-sm">
@@ -51,11 +50,34 @@
     </header>
 
     <main class="container mx-auto py-4 px-2">
-        <section class="intro bg-white p-6 rounded-lg shadow-md text-center">
-            <h1 class="text-2xl font-bold mb-4">Welcome to Vin Nesia</h1>
-            <p class="mb-4">Your one-stop solution for financial tools and services.</p>
-            <p class="mb-4">Explore our <a href="https://currency.vinnesia.my.id/" class="text-blue-900 underline">Currency Converter</a> for real-time exchange rates powered by Frankfurter API.</p>
-            <a href="https://currency.vinnesia.my.id/" class="bg-blue-900 text-white px-4 py-2 rounded-md hover:bg-blue-800 transition">Get Started</a>
+        <section class="ticker bg-blue-100 p-2 rounded-lg mb-3 text-center">
+            <h2 class="text-base font-medium">Live Rates</h2>
+            <div id="ticker" class="text-xs text-gray-700 cursor-pointer"></div>
+        </section>
+        <section class="converter bg-white p-4 rounded-lg shadow-md">
+            <h1 class="text-xl font-semibold text-center mb-4">Currency Converter</h1>
+            <div class="converter-form flex flex-col gap-3">
+                <input type="number" id="amount" placeholder="Enter amount" min="0" class="p-3 border rounded-md text-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <select id="fromCurrency" class="p-3 border rounded-md text-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500"></select>
+                <div class="flex items-center justify-between">
+                    <span class="text-gray-600 text-lg">to</span>
+                    <select id="toCurrency" class="p-3 border rounded-md text-lg w-2/3 focus:outline-none focus:ring-2 focus:ring-blue-500"></select>
+                </div>
+                <button onclick="swapCurrencies()" class="bg-gray-500 text-white px-4 py-3 rounded-md hover:bg-gray-600 transition text-lg w-full">Swap</button>
+            </div>
+            <div id="result" class="mt-4 text-center text-lg font-medium text-gray-800"></div>
+            <div class="mt-4">
+                <h2 class="text-base font-medium mb-2">Multi-Conversion</h2>
+                <div id="multiResult" class="text-sm text-gray-700"></div>
+            </div>
+            <details class="mt-4">
+                <summary class="text-base font-medium cursor-pointer">History</summary>
+                <ul id="history" class="text-sm text-gray-700 mt-2"></ul>
+            </details>
+            <details class="mt-4">
+                <summary class="text-base font-medium cursor-pointer">Trend (7 Days)</summary>
+                <canvas id="rateChart" class="mt-2 w-full"></canvas>
+            </details>
         </section>
     </main>
 
@@ -66,10 +88,35 @@
         </div>
     </footer>
 
+    <div id="ratePopup" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white p-4 rounded-lg shadow-lg w-11/12 max-w-md">
+            <h3 id="popupTitle" class="text-lg font-medium mb-2"></h3>
+            <p id="popupRate" class="mb-2"></p>
+            <button id="closePopup" class="bg-red-500 text-white px-3 py-1 rounded">Close</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script src="script.js"></script>
     <script>
         document.getElementById('menuToggle').addEventListener('click', function() {
             const navMenu = document.getElementById('navMenu');
             navMenu.classList.toggle('hidden');
+        });
+
+        document.getElementById('closePopup').addEventListener('click', () => {
+            document.getElementById('ratePopup').classList.add('hidden');
+        });
+
+        document.querySelectorAll('.ticker-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const from = this.getAttribute('data-from');
+                const to = this.getAttribute('data-to');
+                const rate = this.getAttribute('data-rate');
+                document.getElementById('popupTitle').textContent = `${from} to ${to}`;
+                document.getElementById('popupRate').textContent = `Rate: ${rate}`;
+                document.getElementById('ratePopup').classList.remove('hidden');
+            });
         });
     </script>
 </body>
