@@ -3,60 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn about Vin Nesia Exchange, a trusted platform for real-time currency conversion using the Frankfurter API.">
-    <meta name="keywords" content="about vin nesia exchange, currency converter, exchange rates, forex, real-time conversion">
-    <meta name="author" content="Vin Nesia Exchange">
+    <meta name="description" content="Learn about Vin Nesia, a trusted platform for financial tools and services.">
+    <meta name="keywords" content="about vin nesia, financial tools, currency converter">
+    <meta name="author" content="Vin Nesia">
     <meta name="robots" content="index, follow">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <title>About - Vin Nesia Exchange</title>
+    <title>About - Vin Nesia</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <link rel="stylesheet" href="styles.css">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "FinancialService",
-        "name": "Vin Nesia Exchange",
-        "url": "https://currency.vinnesia.my.id",
-        "description": "A real-time currency converter for global currencies, powered by Frankfurter API.",
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "email": "Vin.nesia.id@gmail.com",
-            "contactType": "Customer Service"
-        }
+        "@type": "Organization",
+        "name": "Vin Nesia",
+        "url": "https://www.vinnesia.my.id/",
+        "description": "Vin Nesia provides financial tools and services.",
+        "contactPoint": { "@type": "ContactPoint", "email": "Vin.nesia.id@gmail.com", "contactType": "Customer Service" }
     }
+    </script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F8V8Y4XQN4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F8V8Y4XQN4');
     </script>
 </head>
 <body class="bg-gray-100">
-    <header class="bg-blue-900 text-white py-4 shadow-md">
-        <nav class="container mx-auto flex justify-between items-center">
-            <div class="flex items-center">
-                <img src="logo.png" alt="Vin Nesia Exchange Logo" class="h-10 mr-2">
-                <div class="text-2xl font-bold">Vin Nesia Exchange</div>
+    <header class="bg-blue-900 text-white py-3 shadow-md">
+        <nav class="container mx-auto flex flex-col items-center px-2">
+            <div class="flex items-center mb-2">
+                <img src="logo.png" alt="Vin Nesia Logo" class="h-8 mr-2">
+                <div class="text-lg font-bold">Vin Nesia</div>
             </div>
-            <ul class="flex space-x-6">
-                <li><a href="index.html" class="hover:underline">Home</a></li>
-                <li><a href="about.html" class="hover:underline">About</a></li>
-                <li><a href="terms.html" class="hover:underline">Terms</a></li>
-                <li><a href="privacy.html" class="hover:underline">Privacy</a></li>
-                <li><a href="blog.html" class="hover:underline">Blog</a></li>
+            <button id="menuToggle" class="bg-gray-700 text-white px-4 py-2 rounded-md mb-2 md:hidden">Menu</button>
+            <ul id="navMenu" class="flex-col hidden md:flex md:flex-row space-y-2 md:space-y-0 md:space-x-4 text-sm">
+                <li><a href="https://www.vinnesia.my.id/" class="hover:underline">Home</a></li>
+                <li><a href="https://www.vinnesia.my.id/about.html" class="hover:underline">About</a></li>
+                <li><a href="https://www.vinnesia.my.id/terms.html" class="hover:underline">Terms</a></li>
+                <li><a href="https://www.vinnesia.my.id/privacy.html" class="hover:underline">Privacy</a></li>
+                <li><a href="https://www.vinnesia.my.id/blog.html" class="hover:underline">Blog</a></li>
+                <li><a href="https://currency.vinnesia.my.id/" class="hover:underline">Currency Converter</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="container mx-auto py-10">
-        <section class="about bg-white p-8 rounded-lg shadow-lg max-w-3xl mx-auto">
-            <h1 class="text-3xl font-semibold text-center mb-6">About Us</h1>
-            <p class="mb-4">Welcome to Vin Nesia Exchange, your trusted platform for seamless and accurate currency conversion. Powered by the Frankfurter API, we provide real-time exchange rates for all major global currencies.</p>
-            <p class="mb-4">Our mission is to simplify currency conversion for travelers, businesses, and finance enthusiasts worldwide. Whether you're planning a trip or managing international transactions, Vin Nesia Exchange is here to help.</p>
-            <p>Contact us at <a href="mailto:Vin.nesia.id@gmail.com" class="text-blue-900 underline">Vin.nesia.id@gmail.com</a> for any inquiries.</p>
+    <main class="container mx-auto py-4 px-2">
+        <section class="about bg-white p-4 rounded-lg shadow-md max-w-3xl mx-auto">
+            <h1 class="text-xl font-semibold text-center mb-4">About Us</h1>
+            <p class="mb-2">Welcome to Vin Nesia, your trusted platform for financial tools and services.</p>
+            <p class="mb-2">We aim to provide innovative solutions, including our popular currency converter.</p>
+            <p>Contact us at <a href="mailto:Vin.nesia.id@gmail.com" class="text-blue-900 underline">Vin.nesia.id@gmail.com</a>.</p>
         </section>
     </main>
 
-    <footer class="bg-gray-800 text-white py-6">
-        <div class="container mx-auto text-center">
-            <p>Contact us: <a href="mailto:Vin.nesia.id@gmail.com" class="underline">Vin.nesia.id@gmail.com</a></p>
-            <p>© 2025 Vin Nesia Exchange. All rights reserved.</p>
+    <footer class="bg-gray-800 text-white py-2">
+        <div class="container mx-auto text-center px-2">
+            <p class="text-sm">Contact: <a href="mailto:Vin.nesia.id@gmail.com" class="underline">Vin.nesia.id@gmail.com</a></p>
+            <p class="text-sm mt-1">© 2025 Vin Nesia</p>
         </div>
     </footer>
+
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
