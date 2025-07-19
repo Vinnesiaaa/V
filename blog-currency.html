@@ -9,14 +9,8 @@
 <meta content="https://vinnesia.my.id/favicon.png" property="og:image"/>
 <meta content="https://vinnesia.my.id" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<link href="img/favicon.png" rel="icon" type="image/png"/>
-<meta content="Vinnesia - Tools &amp; blog for tech utility, currency converter, QR code, and more." name="description"/>
-<meta content="vinnesia, tools, currency converter, qr generator, utility tools" name="keywords"/>
-<meta content="Vinnesia" name="author"/>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Vinnesia | Official Website</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;display=swap" rel="stylesheet"/>
+<meta charset="utf-8"/>
+<title>How to Use Currency Converter | Vinnesia</title>
 <link href="css/style.css" rel="stylesheet"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <style>
@@ -51,62 +45,21 @@
   gtag('js', new Date());
   gtag('config', 'F8V8Y4XQN4');
 </script>
-</meta></meta></head>
+</head>
 <body>
-<header>
-<div style="display:flex;align-items:center;justify-content:center;gap:1rem;">
-<img alt="VIN NESIA Logo" src="img/logo.png" style="height:40px;width:auto;border-radius:8px;"/>
-<span style="font-size:1.8rem;font-weight:800;">VIN NESIA</span>
-</div>
-</header>
-<nav style="position:sticky; top:0; background:#1a1a2e; z-index:1000; border-bottom:1px solid #333;">
-<a href="tools.html">Tools</a>
-<a href="blog.html">Blog</a>
-<a href="#about">About</a>
-<a href="#terms">Terms</a>
-<a href="#privacy">Privacy Policy</a>
-</nav>
-<section style="padding: 4rem 2rem; text-align: center; background: linear-gradient(135deg, #6a0dad, #1a1a2e);">
-<h1 style="font-size: 3rem; font-weight: 800; color: white;">Welcome to Vinnesia</h1>
-<p style="margin-top:1rem; color: #ccc; font-size: 1.1rem;">Powerful tools &amp; insights for modern users.</p>
-<a href="tools.html" style="margin-top:2rem; display:inline-block; background:#b084f7; padding: 0.8rem 1.6rem; color:white; text-decoration:none; border-radius:8px;">Explore Tools</a>
-</section>
-<section>
-<h2>Subdomains</h2>
-<div class="card-container">
-<div class="card">
-<h3>Currency Tool</h3>
-<p><a href="https://currency.vinnesia.my.id" target="_blank">currency.vinnesia.my.id</a></p>
-</div>
-<div class="card">
-<h3>QR Generator</h3>
-<p><a href="https://qr.vinnesia.my.id" target="_blank">qr.vinnesia.my.id</a></p>
-</div>
-</div>
-</section>
-<section id="about">
-<h2>About</h2>
-<p>Vinnesia is a platform providing utility tools and educational content for everyone who wants fast, reliable tools with a great user interface.</p>
-<p>Contact us at <a href="mailto:vin.nesiaa.id@gmail.com">vin.nesiaa.id@gmail.com</a></p>
-<p>Follow us on <a href="https://www.instagram.com/vin.nesia.id" target="_blank">Instagram</a></p>
-</section>
-<section id="terms">
-<h2>Terms of Service</h2>
-<p>By using Vinnesia, you agree to not misuse any tool or content for illegal activities. We reserve the right to update or change our services at any time.</p>
-</section>
-<section id="privacy">
-<h2>Privacy Policy</h2>
-<p>Your data is yours. We do not store or share personal data without your consent. Tools that require temporary processing delete all data after use.</p>
-</section>
-<footer>
-    © 2025 Vinnesia.my.id — Crafted with care.
-  
-<br/><br/>
-<small>
-  Vinnesia™ is a registered trademark. All content © 2025 Vinnesia.my.id. All rights reserved.<br/>
-  This site is for informational purposes only. Tools provided are without warranty. Always double-check critical calculations.
-</small>
-</footer>
+<h1>How to Use Currency Converter</h1>
+<p>This guide explains how to use the currency converter tool at Vinnesia:</p>
+<ol style="color:#ccc;">
+<li>Open the currency tool page.</li>
+<li>Select the currency you want to convert from and to.</li>
+<li>Enter the amount.</li>
+<li>Click convert and view the result instantly.</li>
+</ol>
+<p style="margin-top: 2rem;">
+<a href="index.html" style="background:#b084f7;color:white;padding:0.5rem 1rem;border-radius:8px;text-decoration:none;">
+      ⬅ Back to Home
+    </a>
+</p>
 <div style="margin-top: 3rem; text-align:center;">
 <p>Is this page helpful?</p>
 <button onclick="alert('Thank you for your feedback!')" style="background:#b084f7;color:white;border:none;padding:0.6rem 1rem;border-radius:6px;cursor:pointer;">
@@ -151,29 +104,6 @@ if ('serviceWorker' in navigator) {
     console.log('Service Worker registered.');
   });
 }
-</script>
-<!-- Install App Button -->
-<button id="installBtn" style="position:fixed;bottom:20px;right:20px;padding:0.6rem 1rem;background:#b084f7;color:#fff;border:none;border-radius:8px;cursor:pointer;z-index:999;">
-  📲 Install App
-</button>
-<script>
-let deferredPrompt;
-const installBtn = document.getElementById('installBtn');
-installBtn.style.display = 'none';
-
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-  installBtn.style.display = 'block';
-
-  installBtn.addEventListener('click', () => {
-    installBtn.style.display = 'none';
-    deferredPrompt.prompt();
-    deferredPrompt.userChoice.then(() => {
-      deferredPrompt = null;
-    });
-  });
-});
 </script>
 
 <!-- Scroll to Top -->

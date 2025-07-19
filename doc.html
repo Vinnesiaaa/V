@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VIN NESIA Website Documentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: Arial, sans-serif; background: #0e0b16; color: #fff; padding: 2rem; }
+    h1, h2 { color: #b084f7; }
+    p, li { line-height: 1.6; color: #ccc; }
+    code { background: #1f1f2f; padding: 0.2rem 0.4rem; border-radius: 4px; color: #fff; }
+  </style>
+</head>
+<body>
+  <h1>VIN NESIA Website Documentation</h1>
+
+  <h2>🧾 Project Overview</h2>
+  <p>This is a static website for Vinnesia.my.id, designed with professional layout, responsive UI, PWA-ready structure, and SEO features.</p>
+
+  <h2>📁 Folder Structure</h2>
+  <ul>
+    <li><code>index.html</code>: Homepage with Hero Section, sticky navbar, and links to tools/blogs</li>
+    <li><code>tools.html</code>, <code>blog.html</code>: Listings with cards, “Read More” buttons</li>
+    <li><code>currency.html</code>, <code>qr.html</code>: Detail pages for tools</li>
+    <li><code>blog-currency.html</code>, <code>blog-qr.html</code>: Detail pages for blog posts</li>
+    <li><code>contact.html</code>: Contact form via FormSubmit</li>
+    <li><code>404.html</code>: Custom 404 Not Found</li>
+    <li><code>landing-page.html</code>: App promotion landing page</li>
+    <li><code>css/style.css</code>: Centralized stylesheet</li>
+    <li><code>img/favicon.png</code>, <code>logo.png</code>: Logo & site icon</li>
+    <li><code>manifest.json</code>, <code>sw.js</code>: PWA setup</li>
+    <li><code>sitemap.xml</code>, <code>robots.txt</code>: SEO configuration</li>
+  </ul>
+
+  <h2>🔧 Technical Features</h2>
+  <ul>
+    <li>Responsive design: Works on mobile, tablet, and desktop</li>
+    <li>PWA support: installable via browser with <code>manifest.json</code> & <code>sw.js</code></li>
+    <li>SEO: meta tags, OG tags, sitemap, robots.txt, Google Analytics</li>
+    <li>Cookie Consent: JS script to notify & store preference</li>
+    <li>Feedback buttons: “Is this page helpful?” section</li>
+    <li>Install App button: manual PWA install trigger on homepage</li>
+  </ul>
+
+  <h2>📨 Contact & Ownership</h2>
+  <ul>
+    <li>Emails: <code>Vin.nesia.id@gmail.com</code>, <code>vin.nesiaa.id@gmail.com</code></li>
+    <li>Instagram: <a href="https://instagram.com/Vin.nesia.id" style="color:#b084f7;" target="_blank">@Vin.nesia.id</a></li>
+    <li>Legal: VIN NESIA™ registered trademark. Disclaimer and copyright visible in footer.</li>
+  </ul>
+
+<!-- Scroll to Top -->
+<button onclick="window.scrollTo({top:0,behavior:'smooth'});" style="position:fixed;bottom:80px;right:20px;padding:0.6rem 1rem;background:#b084f7;color:#fff;border:none;border-radius:8px;cursor:pointer;z-index:999;">⬆</button>
+
+<!-- Loading Animation -->
+<div id="loader" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#0e0b16;display:flex;align-items:center;justify-content:center;color:#fff;z-index:10000;">Loading...</div>
+<script>
+window.addEventListener('load', () => {
+  document.getElementById('loader').style.display = 'none';
+});
+</script>
+
+<!-- Last Updated -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const footer = document.querySelector('footer');
+  if (footer) {
+    const updated = document.createElement('p');
+    updated.innerHTML = 'Last updated: ' + new Date(document.lastModified).toLocaleDateString();
+    updated.style.color = '#888';
+    updated.style.marginTop = '1rem';
+    footer.appendChild(updated);
+  }
+});
+</script>
+
+</body>
+</html>

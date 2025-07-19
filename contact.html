@@ -4,83 +4,29 @@
 <head>
 <link href="manifest.json" rel="manifest"/>
 <meta content="vinnesia-verification-key-goes-here" name="google-site-verification"/>
-<meta content="Vinnesia - Utility Tools &amp; Blog" property="og:title"/>
-<meta content="Explore smart tools like currency converter, QR generator, and more." property="og:description"/>
-<meta content="https://vinnesia.my.id/favicon.png" property="og:image"/>
-<meta content="https://vinnesia.my.id" property="og:url"/>
-<meta content="summary_large_image" name="twitter:card"/>
 <meta charset="utf-8"/>
-<title>Blog | Vinnesia</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;display=swap" rel="stylesheet"/>
-<link href="css/style.css" rel="stylesheet"/>
+<title>Contact Us | Vinnesia</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<style>
-    @media (max-width: 600px) {
-      body { padding: 1rem; }
-      h1, h2 { font-size: 1.4rem; }
-      .grid { grid-template-columns: 1fr !important; }
-      nav { flex-direction: column; gap: 1rem; }
-    }
-  </style>
-<style>
-    .card {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.6s ease-out forwards;
-    }
-    .card:hover {
-      transform: scale(1.03);
-    }
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: none;
-      }
-    }
-  </style>
-<!-- Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=F8V8Y4XQN4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'F8V8Y4XQN4');
-</script>
+<link href="css/style.css" rel="stylesheet"/>
 </head>
 <body>
-
-<input type="text" id="searchInput" onkeyup="filterCards()" placeholder="Search..." style="padding:0.6rem;width:100%;max-width:400px;margin:1rem auto;display:block;border-radius:8px;border:none;background:#1a1a2e;color:#fff;text-align:center;">
-<script>
-function filterCards() {
-  const input = document.getElementById("searchInput");
-  const filter = input.value.toLowerCase();
-  const cards = document.querySelectorAll(".card");
-  cards.forEach(card => {
-    const text = card.innerText.toLowerCase();
-    card.style.display = text.includes(filter) ? "" : "none";
-  });
-}
-</script>
-
-<h1>Blog</h1>
-<div class="grid">
-<div class="card">
-<img alt="Blog 1" src="https://via.placeholder.com/300x150.png?text=How+to+Use+Currency+Tool"/>
-<h2>How to Use Currency Tool</h2>
-<p>A step-by-step tutorial to convert currency using our tool.</p>
-<a class="read-more" href="blog-currency.html">Read More</a>
-</div>
-<div class="card">
-<img alt="Blog 2" src="https://via.placeholder.com/300x150.png?text=Create+QR+Code"/>
-<h2>Create Your First QR Code</h2>
-<p>Learn how to generate a QR code for any URL in seconds.</p>
-<a class="read-more" href="blog-qr.html">Read More</a>
-</div>
-</div>
-<p style="margin-top: 2rem;">
-<a href="index.html" style="background:#b084f7;color:white;padding:0.5rem 1rem;border-radius:8px;text-decoration:none;">
-      ⬅ Back to Home
-    </a>
+<h1>Contact Us</h1>
+<form action="https://formsubmit.co/vin.nesiaa.id@gmail.com" method="POST">
+<input name="_captcha" type="hidden" value="false"/>
+<label>Your Name
+      <input name="name" required="" type="text"/>
+</label>
+<label>Your Email
+      <input name="email" required="" type="email"/>
+</label>
+<label>Message
+      <textarea name="message" required="" rows="6"></textarea>
+</label>
+<button type="submit">Send Message</button>
+</form>
+<p style="margin-top: 2rem; text-align: center;">
+    Or email us directly at <a href="mailto:Vin.nesia.id@gmail.com" style="color:#b084f7;">Vin.nesia.id@gmail.com</a><br/>
+    Or follow on Instagram <a href="https://instagram.com/Vin.nesia.id" style="color:#b084f7;" target="_blank">@Vin.nesia.id</a>
 </p>
 <div style="margin-top: 3rem; text-align:center;">
 <p>Is this page helpful?</p>

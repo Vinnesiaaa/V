@@ -1,0 +1,87 @@
+/* Main Stylesheet for Vinnesia */
+:root {
+      --primary: #6a0dad;
+      --bg-dark: #0e0b16;
+      --text-light: #f1f1f1;
+      --accent: #b084f7;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+    }
+    header {
+      background: var(--primary);
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 800;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background-color: #1a1a2e;
+      padding: 1rem 0;
+    }
+    nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    section {
+      padding: 2rem;
+      text-align: center;
+    }
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .card {
+      background: #1f1f2f;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: left;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .card h3 {
+      margin: 1rem 0 0.5rem;
+    }
+    .card p {
+      color: #ccc;
+      font-size: 0.9rem;
+    }
+    footer {
+      background: #1a1a2e;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    .button-header {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
+      margin: 1rem;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .button-header:hover {
+      background: #8e44ff;
+    }

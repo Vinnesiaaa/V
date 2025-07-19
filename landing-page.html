@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Get the Vinnesia App</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="manifest.json" rel="manifest"/>
+<style>
+    body {
+      background: linear-gradient(135deg, #0e0b16, #1a1a2e);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #b084f7;
+    }
+    p {
+      max-width: 600px;
+      margin-top: 1rem;
+      color: #ccc;
+      font-size: 1.1rem;
+    }
+    img {
+      width: 220px;
+      margin: 2rem 0;
+    }
+    a.button {
+      display: inline-block;
+      background: #b084f7;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 8px;
+      margin-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+<h1>Install Vinnesia App</h1>
+<p>Access all tools and blogs from your home screen. Install Vinnesia and enjoy a faster, app-like experience on your mobile device.</p>
+<img alt="Vinnesia App Icon" src="img/favicon.png"/>
+<a class="button" href="index.html">Open Vinnesia</a>
+<p style="margin-top:2rem;"><small>App installable on Android &amp; iOS (via browser).</small></p>
+
+<!-- Scroll to Top -->
+<button onclick="window.scrollTo({top:0,behavior:'smooth'});" style="position:fixed;bottom:80px;right:20px;padding:0.6rem 1rem;background:#b084f7;color:#fff;border:none;border-radius:8px;cursor:pointer;z-index:999;">⬆</button>
+
+<!-- Loading Animation -->
+<div id="loader" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#0e0b16;display:flex;align-items:center;justify-content:center;color:#fff;z-index:10000;">Loading...</div>
+<script>
+window.addEventListener('load', () => {
+  document.getElementById('loader').style.display = 'none';
+});
+</script>
+
+<!-- Last Updated -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const footer = document.querySelector('footer');
+  if (footer) {
+    const updated = document.createElement('p');
+    updated.innerHTML = 'Last updated: ' + new Date(document.lastModified).toLocaleDateString();
+    updated.style.color = '#888';
+    updated.style.marginTop = '1rem';
+    footer.appendChild(updated);
+  }
+});
+</script>
+
+</body>
+</html>
