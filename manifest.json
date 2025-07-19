@@ -1,0 +1,17 @@
+{
+  "name": "Vinnesia",
+  "short_name": "Vinnesia",
+  "description": "Utility tools and blogs by Vinnesia.my.id",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#0e0b16",
+  "theme_color": "#6a0dad",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "img/favicon.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    }
+  ]
+}
