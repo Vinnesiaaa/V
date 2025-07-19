@@ -1,129 +1,53 @@
+
 body {
     font-family: 'Inter', sans-serif;
+    background-color: #1e1b4b; /* ungu gelap */
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #3b0764; /* ungu tua */
+    padding: 1rem;
 }
 
 header nav a {
-    transition: all 0.3s ease;
+    color: #facc15; /* emas */
+    font-weight: 600;
+    margin-right: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.converter-form input, .converter-form select, .converter-form button {
-    transition: all 0.3s ease;
+header nav a:hover {
+    color: #84cc16; /* hijau lime */
 }
 
-.converter-form button:hover {
-    transform: translateY(-1px);
+button, .btn {
+    background-color: #84cc16;
+    color: #000;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
-.result, .multiResult, #ticker, #history {
-    animation: fadeIn 0.5s ease-in;
+button:hover, .btn:hover {
+    background-color: #a3e635;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.tooltip {
-    position: relative;
-    display: inline-block;
+footer {
+    background-color: #3b0764;
+    color: #facc15;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
 }
 
 .tooltip .tooltiptext {
-    visibility: hidden;
-    width: 180px;
-    background-color: #333;
-    color: white;
-    text-align: center;
-    border-radius: 6px;
-    padding: 4px;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -90px;
-    opacity: 0;
-    transition: opacity 0.3s;
-    font-size: 0.75rem;
-}
-
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
-}
-
-@media (max-width: 640px) {
-    header nav {
-        padding: 0.5rem;
-    }
-
-    #menuToggle {
-        width: 100%;
-    }
-
-    #navMenu {
-        text-align: center;
-        padding: 0.5rem 0;
-    }
-
-    .ticker {
-        padding: 0.75rem;
-    }
-
-    .converter {
-        padding: 1rem;
-    }
-
-    .converter h1 {
-        font-size: 1.25rem;
-    }
-
-    .converter-form input, .converter-form select, .converter-form button {
-        padding: 1rem;
-        font-size: 1rem;
-        min-height: 55px;
-    }
-
-    .converter-form select {
-        width: 100%;
-    }
-
-    #toCurrency {
-        width: 65%;
-    }
-
-    .result {
-        font-size: 1.1rem;
-    }
-
-    details summary {
-        font-size: 1rem;
-    }
-
-    #rateChart {
-        height: 180px !important;
-    }
-
-    footer p {
-        font-size: 0.8rem;
-    }
-}
-
-@media (min-width: 641px) {
-    .converter-form {
-        flex-direction: row;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .converter-form select {
-        width: 40%;
-    }
-
-    #toCurrency {
-        width: 40%;
-    }
-
-    #navMenu {
-        display: flex !important;
-    }
+    background-color: #000000cc;
+    color: #fff;
 }
