@@ -1,75 +1,180 @@
 
+/* Tema Warna Dasar */
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: #1e1b4b; /* ungu gelap */
-    color: #ffffff;
+    background-color: #1b0b2e; /* Ungu gelap */
+    color: #ffd700; /* Emas */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
 }
 
-header {
-    background-color: #3b0764; /* ungu tua */
-    padding: 1rem;
-}
-
-header nav a {
-    color: #facc15; /* emas */
-    font-weight: 600;
-    margin-right: 1.5rem;
+a {
+    color: #90ee90; /* Hijau lime */
     text-decoration: none;
-    transition: color 0.3s ease;
 }
 
-header nav a:hover {
-    color: #84cc16; /* hijau lime */
+a:hover {
+    color: #ffffff;
+    text-decoration: underline;
 }
 
-button, .btn {
-    background-color: #84cc16;
-    color: #000;
-    border: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: 8px;
-    cursor: pointer;
+/* Header & Navbar */
+header {
+    background-color: #2d155a; /* Ungu tua */
+    padding: 1rem;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #ffd700;
     font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #90ee90;
+}
+
+/* Tombol */
+button, .btn {
+    background-color: #90ee90; /* Hijau lime */
+    border: none;
+    color: #000;
+    padding: 0.6rem 1.2rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    cursor: pointer;
+    border-radius: 8px;
     transition: background-color 0.3s ease;
 }
 
 button:hover, .btn:hover {
-    background-color: #a3e635;
+    background-color: #75c975;
+}
+
+/* Card & Container */
+.container {
+    padding: 1rem;
+    max-width: 800px;
+    margin: auto;
+}
+
+.card {
+    background-color: #2f1a47;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+}
+
+h1, h2, h3 {
+    color: #ffd700;
 }
 
 footer {
-    background-color: #3b0764;
-    color: #facc15;
     text-align: center;
     padding: 1rem;
-    font-size: 0.9rem;
-}
-
-.tooltip .tooltiptext {
-    background-color: #000000cc;
-    color: #fff;
+    background-color: #2d155a;
+    color: #90ee90;
+    margin-top: 2rem;
 }
 
 
-/* Custom color scheme */
+
 body {
-    background-color: #1a0d2e; /* Ungu gelap */
-    color: #FFD700; /* Emas untuk teks */
+  background-color: #1a0033;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  margin: 0;
+  padding: 0;
 }
 
-a, h1, h2, h3, h4, h5, h6, .menu {
-    color: #FFD700;
+header {
+  background-color: #1a0033;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-button, .btn, .menu-button {
-    background-color: #32CD32; /* Hijau lime */
-    color: white;
-    border: none;
+header h1 {
+  color: gold;
+  font-size: 24px;
+  margin-left: 10px;
 }
 
-button:hover, .btn:hover, .menu-button:hover {
-    background-color: #28a428;
-    color: #fff;
+nav button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #1a0033;
+  display: none;
+}
+
+nav ul.show {
+  display: block;
+}
+
+nav ul li {
+  padding: 10px 20px;
+}
+
+nav ul li a {
+  color: gold;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: #adff2f;
+}
+
+button, input[type="submit"] {
+  background-color: #adff2f;
+  color: #1a0033;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover, input[type="submit"]:hover {
+  background-color: #d4ff2a;
+}
+
+.card, .content-section {
+  background-color: #2b0054;
+  color: #fff;
+  padding: 20px;
+  margin: 15px;
+  border-radius: 10px;
+}
+
+footer {
+  background-color: #000;
+  color: #ccc;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
 }
