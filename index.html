@@ -1,17 +1,18 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vin Nesia Exchange: Convert currencies instantly with real-time exchange rates.">
-    <meta name="keywords" content="currency converter, exchange rates, vin nesia exchange">
-    <meta name="author" content="Vin Nesia">
-    <meta name="robots" content="index, follow">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <title>Currency Converter - Vin Nesia Exchange</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <script type="application/ld+json">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Vin Nesia Exchange: Convert currencies instantly with real-time exchange rates." name="description"/>
+<meta content="currency converter, exchange rates, vin nesia exchange" name="keywords"/>
+<meta content="Vin Nesia" name="author"/>
+<meta content="index, follow" name="robots"/>
+<link href="favicon.ico" rel="icon" type="image/x-icon"/>
+<title>Currency Converter - Vin Nesia Exchange</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
+<script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "FinancialService",
@@ -21,9 +22,9 @@
         "contactPoint": { "@type": "ContactPoint", "email": "Vin.nesia.id@gmail.com", "contactType": "Customer Service" }
     }
     </script>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F8V8Y4XQN4"></script>
-    <script>
+<!-- Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-F8V8Y4XQN4"></script>
+<script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
@@ -31,74 +32,70 @@
     </script>
 </head>
 <body class="bg-gray-100 font-sans">
-    <header class="bg-blue-900 text-white py-3 shadow-md">
-        <nav class="container mx-auto flex flex-col items-center px-2">
-            <div class="flex items-center mb-2">
-                <img src="images/logo.png" alt="Vin Nesia Exchange Logo" class="h-8 mr-2">
-                <div class="text-lg font-bold">Vin Nesia Exchange</div>
-            </div>
-            <button id="menuToggle" class="bg-gray-700 text-white px-4 py-2 rounded-md mb-2 md:hidden">Menu</button>
-            <ul id="navMenu" class="flex-col hidden md:flex md:flex-row space-y-2 md:space-y-0 md:space-x-4 text-sm">
-                <li><a href="https://www.vinnesia.my.id/" class="hover:underline">Home</a></li>
-                <li><a href="https://www.vinnesia.my.id/about.html" class="hover:underline">About</a></li>
-                <li><a href="https://www.vinnesia.my.id/terms.html" class="hover:underline">Terms</a></li>
-                <li><a href="https://www.vinnesia.my.id/privacy.html" class="hover:underline">Privacy</a></li>
-                <li><a href="https://www.vinnesia.my.id/blog.html" class="hover:underline">Blog</a></li>
-                <li><a href="https://currency.vinnesia.my.id/" class="hover:underline">Currency Converter</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main class="container mx-auto py-4 px-2">
-        <section class="ticker bg-blue-100 p-2 rounded-lg mb-3 text-center">
-            <h2 class="text-base font-medium">Live Rates</h2>
-            <div id="ticker" class="text-xs text-gray-700 cursor-pointer"></div>
-        </section>
-        <section class="converter bg-white p-4 rounded-lg shadow-md">
-            <h1 class="text-xl font-semibold text-center mb-4">Currency Converter</h1>
-            <div class="converter-form flex flex-col gap-3">
-                <input type="number" id="amount" placeholder="Enter amount" min="0" class="p-3 border rounded-md text-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500">
-                <select id="fromCurrency" class="p-3 border rounded-md text-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500"></select>
-                <div class="flex items-center justify-between">
-                    <span class="text-gray-600 text-lg">to</span>
-                    <select id="toCurrency" class="p-3 border rounded-md text-lg w-2/3 focus:outline-none focus:ring-2 focus:ring-blue-500"></select>
-                </div>
-                <button onclick="swapCurrencies()" class="bg-gray-500 text-white px-4 py-3 rounded-md hover:bg-gray-600 transition text-lg w-full">Swap</button>
-            </div>
-            <div id="result" class="mt-4 text-center text-lg font-medium text-gray-800"></div>
-            <div class="mt-4">
-                <h2 class="text-base font-medium mb-2">Multi-Conversion</h2>
-                <div id="multiResult" class="text-sm text-gray-700"></div>
-            </div>
-            <details class="mt-4">
-                <summary class="text-base font-medium cursor-pointer">History</summary>
-                <ul id="history" class="text-sm text-gray-700 mt-2"></ul>
-            </details>
-            <details class="mt-4">
-                <summary class="text-base font-medium cursor-pointer">Trend (7 Days)</summary>
-                <canvas id="rateChart" class="mt-2 w-full"></canvas>
-            </details>
-        </section>
-    </main>
-
-    <footer class="bg-gray-800 text-white py-2">
-        <div class="container mx-auto text-center px-2">
-            <p class="text-sm">Contact: <a href="mailto:Vin.nesia.id@gmail.com" class="underline">Vin.nesia.id@gmail.com</a></p>
-            <p class="text-sm mt-1">© 2025 Vin Nesia</p>
-        </div>
-    </footer>
-
-    <div id="ratePopup" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-        <div class="bg-white p-4 rounded-lg shadow-lg w-11/12 max-w-md">
-            <h3 id="popupTitle" class="text-lg font-medium mb-2"></h3>
-            <p id="popupRate" class="mb-2"></p>
-            <button id="closePopup" class="bg-red-500 text-white px-3 py-1 rounded">Close</button>
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
-    <script src="script.js"></script>
-    <script>
+<header class="bg-blue-900 text-white py-3 shadow-md">
+<nav class="container mx-auto flex flex-col items-center px-2">
+<div class="flex items-center mb-2">
+<img alt="Vin Nesia Exchange Logo" class="h-8 mr-2" src="images/logo.png"/>
+<div class="text-lg font-bold">Vin Nesia Exchange</div>
+</div>
+<button class="bg-gray-700 text-white px-4 py-2 rounded-md mb-2 md:hidden" id="menuToggle">Menu</button>
+<ul class="flex-col hidden md:flex md:flex-row space-y-2 md:space-y-0 md:space-x-4 text-sm" id="navMenu">
+<li><a class="hover:underline" href="https://www.vinnesia.my.id/">Home</a></li>
+<li><a class="hover:underline" href="https://www.vinnesia.my.id/about.html">About</a></li>
+<li><a class="hover:underline" href="https://www.vinnesia.my.id/terms.html">Terms</a></li>
+<li><a class="hover:underline" href="https://www.vinnesia.my.id/privacy.html">Privacy</a></li>
+<li><a class="hover:underline" href="https://www.vinnesia.my.id/blog.html">Blog</a></li>
+<li><a class="hover:underline" href="https://currency.vinnesia.my.id/">Currency Converter</a></li>
+</ul>
+</nav>
+</header>
+<main class="container mx-auto py-4 px-2">
+<section class="ticker bg-blue-100 p-2 rounded-lg mb-3 text-center">
+<h2 class="text-base font-medium">Live Rates</h2>
+<div class="text-xs text-gray-700 cursor-pointer" id="ticker"></div>
+</section>
+<section class="converter bg-white p-4 rounded-lg shadow-md">
+<h1 class="text-xl font-semibold text-center mb-4">Currency Converter</h1>
+<div class="converter-form flex flex-col gap-3">
+<input class="p-3 border rounded-md text-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500" id="amount" min="0" placeholder="Enter amount" type="number"/>
+<select class="p-3 border rounded-md text-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500" id="fromCurrency"></select>
+<div class="flex items-center justify-between">
+<span class="text-gray-600 text-lg">to</span>
+<select class="p-3 border rounded-md text-lg w-2/3 focus:outline-none focus:ring-2 focus:ring-blue-500" id="toCurrency"></select>
+</div>
+<button class="bg-gray-500 text-white px-4 py-3 rounded-md hover:bg-gray-600 transition text-lg w-full" onclick="swapCurrencies()">Swap</button>
+</div>
+<div class="mt-4 text-center text-lg font-medium text-gray-800" id="result"></div>
+<div class="mt-4">
+<h2 class="text-base font-medium mb-2">Multi-Conversion</h2>
+<div class="text-sm text-gray-700" id="multiResult"></div>
+</div>
+<details class="mt-4">
+<summary class="text-base font-medium cursor-pointer">History</summary>
+<ul class="text-sm text-gray-700 mt-2" id="history"></ul>
+</details>
+<details class="mt-4">
+<summary class="text-base font-medium cursor-pointer">Trend (7 Days)</summary>
+<canvas class="mt-2 w-full" id="rateChart"></canvas>
+</details>
+</section>
+</main>
+<footer class="bg-gray-800 text-white py-2">
+<div class="container mx-auto text-center px-2">
+<p class="text-sm">Contact: <a class="underline" href="mailto:Vin.nesia.id@gmail.com">Vin.nesia.id@gmail.com</a></p>
+<p class="text-sm mt-1">© 2025 Vin Nesia</p>
+</div>
+</footer>
+<div class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" id="ratePopup">
+<div class="bg-white p-4 rounded-lg shadow-lg w-11/12 max-w-md">
+<h3 class="text-lg font-medium mb-2" id="popupTitle"></h3>
+<p class="mb-2" id="popupRate"></p>
+<button class="bg-red-500 text-white px-3 py-1 rounded" id="closePopup">Close</button>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+<script src="script.js"></script>
+<script>
         document.getElementById('menuToggle').addEventListener('click', function() {
             const navMenu = document.getElementById('navMenu');
             navMenu.classList.toggle('hidden');
