@@ -1,134 +1,75 @@
 
 body {
-  background-color: #1a0536;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #ffffff;
-  margin: 0;
-  padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #1e1b4b; /* ungu gelap */
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
 }
 
 header {
-  background-color: #1a0536;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    background-color: #3b0764; /* ungu tua */
+    padding: 1rem;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
+header nav a {
+    color: #facc15; /* emas */
+    font-weight: 600;
+    margin-right: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.logo img {
-  height: 40px;
-  margin-right: 10px;
+header nav a:hover {
+    color: #84cc16; /* hijau lime */
 }
 
-.logo span {
-  color: #f9c300;
-  font-weight: bold;
-  font-size: 20px;
+button, .btn {
+    background-color: #84cc16;
+    color: #000;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
-.menu-button {
-  background-color: #333;
-  color: white;
-  padding: 8px 16px;
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
+button:hover, .btn:hover {
+    background-color: #a3e635;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  background-color: #1a0536;
-  display: none;
+footer {
+    background-color: #3b0764;
+    color: #facc15;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
 }
 
-nav ul li {
-  padding: 10px;
+.tooltip .tooltiptext {
+    background-color: #000000cc;
+    color: #fff;
 }
 
-nav ul li a {
-  color: white;
-  text-decoration: none;
+
+/* Custom color scheme */
+body {
+    background-color: #1a0d2e; /* Ungu gelap */
+    color: #FFD700; /* Emas untuk teks */
 }
 
-nav ul li a:hover {
-  color: #00ff88;
+a, h1, h2, h3, h4, h5, h6, .menu {
+    color: #FFD700;
 }
 
-h1, h2, h3 {
-  color: #f9c300;
-  margin: 20px 0 10px;
+button, .btn, .menu-button {
+    background-color: #32CD32; /* Hijau lime */
+    color: white;
+    border: none;
 }
 
-.live-rates {
-  background-color: #e0ecff;
-  color: #f9c300;
-  padding: 10px;
-  text-align: center;
-  border-radius: 8px;
-  margin: 20px;
-  font-weight: bold;
-}
-
-.converter-container {
-  background-color: #fff;
-  color: #000;
-  padding: 20px;
-  margin: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
-
-input, select {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
-button {
-  background-color: #333;
-  color: white;
-  padding: 12px;
-  width: 100%;
-  border: none;
-  border-radius: 6px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #00ff88;
-}
-
-.warning {
-  background-color: #fff7cc;
-  color: #a14c00;
-  padding: 10px;
-  border-radius: 6px;
-  margin-top: 10px;
-  text-align: center;
-  font-weight: bold;
-}
-
-.footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 14px;
-  color: #aaa;
-}
-
-.multi-conversion {
-  color: #f9c300;
-  font-weight: bold;
-  padding-left: 10px;
+button:hover, .btn:hover, .menu-button:hover {
+    background-color: #28a428;
+    color: #fff;
 }
